@@ -42,7 +42,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("Otstarve:; Veebilehel kuvatavate treeningkavade personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) treeningkava eesmärgiga; sisendtekstiks on neutraalses vormis treeningkava.\
-    \n\n Kasutusjuhend: Kasutaja: 1) valmistab ette treeningkava (sisendteksti);
+    \n\n Kasutusjuhend: Kasutaja: 1) valmistab ette treeningkava (treeningkava);
 2) määrab segemendid lähtuvalt vanuserühma ja treeningkava eesmärgist;
 3) sisestab ükshaaval segmentide lõikes eeltoodud info äpi kasutajaliideses, saadab ära;
 4) kopeerib ükshaaval segmentide lõikes äpi väljundteksti kõnealusetreeningkavale.\
