@@ -40,12 +40,10 @@ st.header("Personaliseeritud turundusteksti konverter")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("Otstarve: Veebilehel kuvatavate treeningkavade personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) treeningkava eesmärgiga; sisendtekstiks on neutraalses vormis treeningkava \
-    \n\n Kasutusjuhend: ) valmistab ette treeningkava (sisendtekst);")
- 2) määrab segemendid lähtuvalt vanuserühma ja treeningkava eesmärgist;
-3) sisestab ükshaaval segmentide lõikes eeltoodud info äpi kasutajaliideses, saadab ära;
-4) kopeerib ükshaaval segmentide lõikes äpi väljundteksti kõnealusetreeningkavale.\
-    4) kopeeri ükshaaval treeningkavade lõikes äpi treeningkava kõnealuse treenija juuurde.")
+    st.markdown("Otstarve: tootetutvustustekstide personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) hobbitegevusega; sisendtekstiks on neutraalses vormis tootekirjeldus. \
+    \n\n Kasutusjuhend: 1) valmista ette tootekirjeldus (sisendtekst). 2) määra tarbijasegemendid lähtuvalt vanuserühma ja hobbide kombinatsioonidest. 3) sisesta ükshaaval tarbijasegmentide lõikes eeltoodud info äpi kasutajaliideses, saada ära. \
+    4) kopeeri ükshaaval tarbijasegmentide lõikes äpi väljundteksti kõnealuse toote tutvustuslehele.")
+
 
 
 with col2:
