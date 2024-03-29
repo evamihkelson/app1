@@ -6,20 +6,22 @@ import os
 
 
 template = """
- You are a marketing copywriter with 20 years of experience. You are analyzing customer's background to write personalized product description that only this customer will receive; 
+ You are a personal trainer with 20 years of experience. You analyze the client's training goals to create a personalized training plan that only this client will receive;
     PRODUCT input text: {content};
     CUSTOMER age group (y): {agegroup};
-    CUSTOMER main Hobby: {hobby};
-    TASK: Write a product description that is tailored into this customer's Age group and hobby. Use age group specific slang.;
-    FORMAT: Present the result in the following order: (PRODUCT DESCRIPTION), (BENEFITS), (USE CASE);
-    PRODUCT DESCRIPTION: describe the product in 5 sentences;
-    BENEFITS: describe in 3 sentences why this product is perfect considering customers age group and hobby;
-    USE CASE: write a story in 5 sentences, of an example weekend activity taking into account hobby {hobby} and age {agegroup}, write a story in first person, example "I started my Saturday morning with ...";
+    CUSTOMER main training goals: {training goals};
+    TASK: Create a training plan that suits the client's age group and fitness goals.;
+    FORMAT: Present the result in the following order: (WEEKLY PLAN), (EXERCISES PLAN);
+    PRODUCT DESCRIPTION: describe the training exercises in 5 sentences;
+    BENEFITS: describe in 3 sentences why this training plan is perfect considering customers age group and training plan goal;
+    USE CASE: Write a gym workout plan with 6 exercises, determine how many times a week one should train in the gym based on their training goals {traininggoal} and age {agegroup}. Assign each individual their own workout plan."
+
+
 """
 
 
 prompt = PromptTemplate(
-    input_variables=["agegroup", "hobby", "content"],
+    input_variables=["agegroup", "traininggoal", "content"],
     template=template,
 )
 
@@ -39,9 +41,12 @@ col1, col2 = st.columns(2)
 
 
 with col1:
-    st.markdown("Otstarve: tootetutvustustekstide personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) hobbitegevusega; sisendtekstiks on neutraalses vormis tootekirjeldus. \
-    \n\n Kasutusjuhend: 1) valmista ette tootekirjeldus (sisendtekst). 2) määra tarbijasegemendid lähtuvalt vanuserühma ja hobbide kombinatsioonidest. 3) sisesta ükshaaval tarbijasegmentide lõikes eeltoodud info äpi kasutajaliideses, saada ära. \
-    4) kopeeri ükshaaval tarbijasegmentide lõikes äpi väljundteksti kõnealuse toote tutvustuslehele.")
+    st.markdown("Otstarve:; Veebilehel kuvatavate treeningkavade personaliseerimine igale kliendile või kliendigruppidele; väljundtekst on kohandatud kliendi a) vanuserühmaga ja b) treeningkava eesmärgiga; sisendtekstiks on neutraalses vormis treeningkava.\
+    \n\n Kasutusjuhend: Kasutaja: 1) valmistab ette treeningkava (sisendteksti);
+2) määrab segemendid lähtuvalt vanuserühma ja treeningkava eesmärgist;
+3) sisestab ükshaaval segmentide lõikes eeltoodud info äpi kasutajaliideses, saadab ära;
+4) kopeerib ükshaaval segmentide lõikes äpi väljundteksti kõnealusetreeningkavale.\
+    4) kopeeri ükshaaval treeningkavade lõikes äpi treeningkava kõnealuse treenija juuurde.")
 
 
 with col2:
@@ -69,12 +74,12 @@ with col1:
         'Which age group would you like your content to target?',
         ('9-15', '16-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-100'))
     
-def get_hobby():
-    input_text = st.text_input(label="Customers main hobby", key="hobby_input")
+def get_traininggoal():
+    input_text = st.text_input(label="Customers main training goal", key="traininggoal_input")
     return input_text
 
 
-hobby_input = get_hobby()
+hobby_input = get_traininggoal()
 
 
 def get_text():
